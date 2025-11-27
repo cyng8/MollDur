@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moll-Dur - interwały</title>
+    <link rel="icon" href="imgs/temporary main icon.png">
+    <link rel="stylesheet" href="css/styleIndex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">  
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <h1>Źle!</h1>
+        <p id="badInfo">to był/była: </p>
+        <div id="goBackButton" onclick="goBack()">
+            przejdź dalej
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="colMain">
+            <div id="score">
+                <div id="good">
+                    <h2 id="goodCounter">0</h2>
+
+                    <div class="blackBarLeft">
+                        <h2>Dobrze</h2>
+                    </div>
+                </div>
+                <div id="bad">
+                    <h2 id="badCounter">0</h2>
+
+                    <div class="blackBarRight">
+                        <h2>Źle</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="start" onclick="restart()">
+                <h2>restart</h2>
+            </div>
+        </div>
+
+
+        <div id="intervalsButtons">
+            <div class="row">
+                <div class="intervalBox" id="btnBox1">
+                    <div class="disable" onclick="intervalToggle(1, 'f1', '1box', 'btnBox1')">
+                        <img src="imgs/acceptIcon.svg" id="f1">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('1')" id="1box"></div>
+                    <h2 id="1">1</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="intervalBox" id="btnBox2">
+                    <div class="disable" onclick="intervalToggle(2, 'f2', '2box', 'btnBox2')">
+                        <img src="imgs/acceptIcon.svg" id="f2">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('2')" id="2box"></div>
+                    <h2 id="2">2></h2>
+                </div>
+                <div class="intervalBox" id="btnBox3">
+                    <div class="disable" onclick="intervalToggle(3, 'f3', '3box' , 'btnBox3')">
+                        <img src="imgs/acceptIcon.svg" id="f3">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('3')" id="3box"></div>
+                    <h2 id="3">2</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="intervalBox" id="btnBox4">
+                    <div class="disable" onclick="intervalToggle(4, 'f4', '4box', 'btnBox4')">
+                        <img src="imgs/acceptIcon.svg" id="f4">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('4')" id="4box"></div>
+                    <h2 id="4">3></h2>
+                </div>
+                <div class="intervalBox" id="btnBox5">
+                    <div class="disable" onclick="intervalToggle(5, 'f5', '5box', 'btnBox5')">
+                        <img src="imgs/acceptIcon.svg" id="f5">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('5')" id="5box"></div>
+                    <h2 id="5">3</h2>
+                </div>
+            </div>
+            <div id="triton">
+                <div class="intervalBox" id="btnBox7">
+                    <div class="disable" onclick="intervalToggle(7, 'f7', '7box', 'btnBox7')">
+                        <img src="imgs/acceptIcon.svg" id="f7">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('7')" id="7box"></div>
+                    <h2 id="7">tryton</h2>
+                </div>
+                <div class="col">
+                    <div class="intervalBox" id="btnBox6"> 
+                        <div class="disable" onclick="intervalToggle(6, 'f6', '6box', 'btnBox6')">
+                            <img src="imgs/acceptIcon.svg" id="f6">
+                        </div>
+                        <div class="fix" onclick="getUserInterval('6')" id="6box"></div>
+                        <h2 id="6">4</h2>
+                    </div>
+                    <div class="intervalBox" id="btnBox8">
+                        <div class="disable" onclick="intervalToggle(8, 'f8', '8box', 'btnBox8')">
+                            <img src="imgs/acceptIcon.svg" id="f8">
+                        </div>
+                        <div class="fix" onclick="getUserInterval('8')" id="8box"></div>
+                        <h2 id="8">5</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="intervalBox" id="btnBox9">
+                    <div class="disable" onclick="intervalToggle(9, 'f9', '9box', 'btnBox9')">
+                        <img src="imgs/acceptIcon.svg" id="f9">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('9')" id="9box"></div>
+                    <h2 id="9">6></h2>
+                </div>
+                <div class="intervalBox" id="btnBox10">
+                    <div class="disable" onclick="intervalToggle(10, 'f10', '10box', 'btnBox10')">
+                        <img src="imgs/acceptIcon.svg" id="f10">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('10')" id="10box"></div>
+                    <h2 id="10">6</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="intervalBox" id="btnBox11">
+                    <div class="disable" onclick="intervalToggle(11, 'f11', '11box' , 'btnBox11')">
+                        <img src="imgs/acceptIcon.svg" id="f11">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('11')" id="11box"></div>
+                    <h2 id="11">7</h2>
+                </div>
+                <div class="intervalBox" id="btnBox12">
+                    <div class="disable" onclick="intervalToggle(12, 'f12', '12box' , 'btnBox12')">
+                        <img src="imgs/acceptIcon.svg" id="f12">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('12')" id="12box"></div>
+                    <h2 id="12">7<</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="intervalBox" id="btnBox13">
+                    <div class="disable" onclick="intervalToggle(13, 'f13', '13box' , 'btnBox13')">
+                        <img src="imgs/acceptIcon.svg" id="f13">
+                    </div>
+                    <div class="fix" onclick="getUserInterval('13')" id="13box"></div>
+                    <h2 id="13">8</h2>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <div class="controlsButton" onclick="getInterval()"><h2>następny ➡️</h2></div>
+            <div class="controlsButton" onclick="playInterval()"><h2>powtórz ↩️</h2></div>
+            <select onchange="selectMode()" id="mode">
+                <option value="up">melodycznie w górę ↗️</option>
+                <option value="down">melodycznie w dół ↘️</option>
+                <option value="harm">harmonicznie ⬆️</option>
+                <option value="upharm">mel. i harm. w górę ↗️ ⬆️</option>
+                <option value="downharm">mel. i harm. w dół ↘️⬆️</option>
+            </select>
+        </div>
+    </div>
+    <audio id="player"></audio>
+    <audio id="player2"></audio>
+    <audio id="player3"></audio>
+    <audio id="player4"></audio>
+
+    <script src="js/indexScript.js"></script>
+</body>
+</html>
